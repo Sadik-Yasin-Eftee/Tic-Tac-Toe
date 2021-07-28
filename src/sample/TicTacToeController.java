@@ -79,20 +79,6 @@ public class TicTacToeController {
         }
         //System.out.println("Button 1");
         }
-
 }
-/*
-    void button (){
-        System.out.println(b0.getId());
-        System.out.println(b1.getId());
-        System.out.println(b2.getId());
-        System.out.println(b3.getId());
-        System.out.println(b4.getId());
-        System.out.println(b5.getId());
-        System.out.println(b6.getId());
-        System.out.println(b7.getId());
-        System.out.println(b8.getId());
-    }
 
- */
 
