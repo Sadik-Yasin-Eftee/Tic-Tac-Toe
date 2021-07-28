@@ -13,6 +13,8 @@ import java.lang.reflect.Array;
 
 public class Main extends Application {
 
+    static Button[] buttons = new Button[9];
+
     @Override
     public void start(Stage primaryStage) {
         try {
@@ -20,23 +22,25 @@ public class Main extends Application {
             Scene scene = new Scene(root,650, 650);
             //scene.lookup("#1");
             //Button button1 = ((Button)scene.lookup("#0"));
-            //Button button = new Button();
+
+
+
+            Button button = new Button();
             //button1.setText("Changed");
             //System.out.println(button1.getId()); // shows the index number of button
-            /*
-            int array[] = new int[9];
-            for (int i = 0 ;i < 9 ; i = i + 2){
+
+            //int array[] = new int[9];
+            for (int i = 0 ;i < 9 ; i = i + 1){
                 String j = Integer.toString(i);
                 button = ((Button) scene.lookup("#" + j));
                 String index = button.getId();
                 int ind = Integer.parseInt(index);
-                array[i] = ind;
-                System.out.println(array[i]);
-                button.setText("O");
-
+                buttons[i] = button;
+                System.out.println(buttons[i]);
+                //button.setText("O");
             }
 
-             */
+
             //scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
             primaryStage.setScene(scene);
             primaryStage.setResizable(false);
