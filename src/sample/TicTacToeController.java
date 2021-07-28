@@ -23,18 +23,6 @@ import java.util.ResourceBundle;
 
 public class TicTacToeController {
 
-    /*
-    @FXML Button b0;
-    @FXML Button b1;
-    @FXML Button b2;
-    @FXML Button b3;
-    @FXML Button b4;
-    @FXML Button b5;
-    @FXML Button b6;
-    @FXML Button b7;
-    @FXML Button b8;
-     */
-
     private boolean player = true;
 
     private boolean buttonArray[] = new boolean[9];
