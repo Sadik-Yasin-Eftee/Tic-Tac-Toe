@@ -58,11 +58,11 @@ public class TicTacToeController {
             System.out.println(this.buttonArray[Integer.parseInt(clickedButton.getId())]);
             player = false;
             buttonCount++;
-/*
-            if (winningCombination.combination()){
+
+            if (winningCombination.combination() == 1){
                 System.out.println("Player wins");
             }
- */
+
         }
 
         if (buttonCount < 9) {
@@ -78,11 +78,11 @@ public class TicTacToeController {
             while (clickedButton.getText() != "");
             clickedButton.setText("O");
             buttonCount++;
-          /*  if (winningCombination.combination()){
+            if (winningCombination.combination() == -1){
                 System.out.println("Computer wins");
             }
 
-           */
+
         }
         //System.out.println("Button 1");
     }

@@ -42,11 +42,7 @@
         <RadioButton fx:id="classic" layoutX="457.0" layoutY="151.0" mnemonicParsing="false" onAction="#themeSelection" text="Classic" />
         <RadioButton fx:id="forest" layoutX="458.0" layoutY="181.0" mnemonicParsing="false" onAction="#themeSelection" text="Forest" />
         <RadioButton fx:id="highContrast" layoutX="458.0" layoutY="212.0" mnemonicParsing="false" onAction="#themeSelection" prefHeight="18.0" prefWidth="107.0" text="High Contrast" />
-        <AnchorPane layoutX="502.0" layoutY="468.0">
-            <children>
-                <Button layoutX="-64.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="157.0" text="Start With Random AI" />
-            </children>
-        </AnchorPane>
         <Button layoutX="436.0" layoutY="509.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="164.0" text="Start With Defensive AI" />
+      <Button layoutX="433.0" layoutY="471.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="164.0" text="Start With Random AI" />
     </children>
 </AnchorPane>
