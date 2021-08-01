@@ -12,5 +12,4 @@ public class HighlightingWinningCombination {
         button1.setStyle("-fx-background-color: radial-gradient( radius 100%, white, lightyellow, lawngreen); -fx-text-fill: red;");
         button2.setStyle("-fx-background-color: radial-gradient( radius 100%, white, lightyellow, lawngreen); -fx-text-fill: red;");
     }
-
 }

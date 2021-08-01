@@ -35,15 +35,6 @@ public class TicTacToeController {
 
     public int buttonCount = 0;
     public int max = 8, min = 0;
-/*
-    @FXML
-    private Label theme;
-
-    @FXML
-    private RadioButton classic, forest, highContrast;
-
-
- */
 
     public void buttonClicked(ActionEvent actionEvent) throws IOException {
 
@@ -62,7 +53,6 @@ public class TicTacToeController {
             if (winningCombination.combination() == 1){
                 System.out.println("Player wins");
             }
-
         }
 
         if (buttonCount < 9) {
@@ -81,8 +71,6 @@ public class TicTacToeController {
             if (winningCombination.combination() == -1){
                 System.out.println("Computer wins");
             }
-
-
         }
         //System.out.println("Button 1");
     }
