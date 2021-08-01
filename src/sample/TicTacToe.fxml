@@ -11,7 +11,6 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.TicTacToeController">
     <children>
-        <RadioButton layoutX="457.0" layoutY="151.0" mnemonicParsing="false" text="Classic" />
         <GridPane layoutX="23.0" layoutY="151.0" prefHeight="418.0" prefWidth="394.0">
             <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -40,8 +39,9 @@
                 <Font size="24.0" />
             </font>
         </Label>
-        <RadioButton layoutX="458.0" layoutY="181.0" mnemonicParsing="false" text="Forest" />
-        <RadioButton layoutX="458.0" layoutY="212.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="107.0" text="High Contrast" />
+        <RadioButton fx:id="classic" layoutX="457.0" layoutY="151.0" mnemonicParsing="false" onAction="#themeSelection" text="Classic" />
+        <RadioButton fx:id="forest" layoutX="458.0" layoutY="181.0" mnemonicParsing="false" onAction="#themeSelection" text="Forest" />
+        <RadioButton fx:id="highContrast" layoutX="458.0" layoutY="212.0" mnemonicParsing="false" onAction="#themeSelection" prefHeight="18.0" prefWidth="107.0" text="High Contrast" />
         <AnchorPane layoutX="502.0" layoutY="468.0">
             <children>
                 <Button layoutX="-64.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="157.0" text="Start With Random AI" />

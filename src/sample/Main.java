@@ -34,7 +34,7 @@ public class Main extends Application {
                 String j = Integer.toString(i);
                 button = ((Button) scene.lookup("#" + j));
                 String index = button.getId();
-                int ind = Integer.parseInt(index);
+                //int ind = Integer.parseInt(index);
                 buttons[i] = button;
                 System.out.println(buttons[i]);
                 //button.setText("O");
