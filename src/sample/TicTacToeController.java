@@ -1,5 +1,6 @@
 package sample;
 
+
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -9,12 +10,16 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
-import java.awt.*;
 import java.awt.event.ActionListener;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.lang.invoke.MethodHandles;
 import java.util.Random;
@@ -43,6 +48,7 @@ public class TicTacToeController {
         WinningCombination winningCombination = new WinningCombination();
 
         if (buttonCount < 9) {
+            clickedButton.setFont(new Font("MV Boli",30));
             clickedButton.setText("X");
             System.out.println(clickedButton.getId());
             this.buttonArray[Integer.parseInt(clickedButton.getId())] = true;
@@ -66,6 +72,7 @@ public class TicTacToeController {
                 player = true;
             }
             while (clickedButton.getText() != "");
+            clickedButton.setFont(new Font("MV Boli",30));
             clickedButton.setText("O");
             buttonCount++;
             if (winningCombination.combination() == -1){
@@ -80,18 +87,36 @@ public class TicTacToeController {
     @FXML
     private RadioButton classic, forest, highContrast;
 
+    @FXML
+    ImageView backgroundImage;
+    Image classicImage;
+    Image forestImage ;
+    Image highContrastImage;
+
+
+    @FXML
+    public void initialize(){
+        classicImage = new Image(getClass().getResourceAsStream("Classic.jpg"));
+        forestImage = new Image(getClass().getResourceAsStream("Forest.png"));
+        highContrastImage = new Image(getClass().getResourceAsStream("DarkGrey.jpg"));
+    }
+
     public void themeSelection(ActionEvent actionEvent) throws IOException {
         if (classic.isSelected()) {
             System.out.println("Classic Selected");
+            backgroundImage.setImage(classicImage);
             //theme.setText(classic.getText());
         } else if (forest.isSelected()) {
             System.out.println("Forest Selected");
+            backgroundImage.setImage(forestImage);
             //theme.setText(forest.getText());
         } else if (highContrast.isSelected()) {
             System.out.println("High Selected");
+            backgroundImage.setImage(highContrastImage);
             //theme.setText(highContrast.getText());
         }
     }
+
 }
 
 

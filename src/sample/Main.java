@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
@@ -36,6 +37,7 @@ public class Main extends Application {
                 String index = button.getId();
                 //int ind = Integer.parseInt(index);
                 buttons[i] = button;
+                //buttons[i].setFont(new Font("MV Boli", 10));
                 System.out.println(buttons[i]);
                 //button.setText("O");
             }
