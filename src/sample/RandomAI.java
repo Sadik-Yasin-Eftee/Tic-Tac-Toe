@@ -37,11 +37,9 @@ public class RandomAI {
 
             if (buttonCount < 9) {
                 do {
-                    //Random randomNumber = new Random();
                     int randomNumber = (int) (Math.random() * (max - min + 1) + min);
                     clickedButton = Main.buttons[randomNumber];
                     System.out.println(randomNumber);
-                    //if ()
                     //System.out.println(clickedButton.getId());
                     player = true;
                 }

@@ -33,7 +33,6 @@ public class TicTacToeController<classicImage, forestImage, getClass> {
         Button AIButton = (Button) actionEvent.getTarget();
         Button clickedButton = (Button) actionEvent.getTarget();
         String buttonLabel = AIButton.getText();
-        WinningCombination winningCombination = new WinningCombination();
 
         RandomAI randomAI = new RandomAI();
         randomAI.randomAIMethod(clickedButton);
@@ -58,19 +57,27 @@ public class TicTacToeController<classicImage, forestImage, getClass> {
         highContrastImage = new Image(getClass().getResourceAsStream("DarkGrey.jpg"));
     }
 
-
     public void themeSelection(ActionEvent actionEvent) throws IOException {
         if (classic.isSelected()) {
             System.out.println("Classic Selected");
             backgroundImage.setImage(classicImage);
+            for (int i = 0 ; i < 9 ; i++){
+                Main.buttons[i].setStyle("-fx-background-color: White");
+            }
             //theme.setText(classic.getText());
         } else if (forest.isSelected()) {
             System.out.println("Forest Selected");
             backgroundImage.setImage(forestImage);
+            for (int i = 0 ; i < 9 ; i++){
+                Main.buttons[i].setStyle("-fx-background-color: Green");
+            }
             //theme.setText(forest.getText());
         } else if (highContrast.isSelected()) {
             System.out.println("High Selected");
             backgroundImage.setImage(highContrastImage);
+            for (int i = 0 ; i < 9 ; i++){
+                Main.buttons[i].setStyle("-fx-background-color: Grey");
+            }
             //theme.setText(highContrast.getText());
         }
     }

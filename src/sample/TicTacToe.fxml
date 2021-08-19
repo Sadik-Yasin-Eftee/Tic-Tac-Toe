@@ -31,15 +31,15 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <children>
-                <Button id="1" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="156.0" prefWidth="148.0" GridPane.columnIndex="1" />
-                <Button id="2" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="156.0" prefWidth="148.0" GridPane.columnIndex="2" />
-                <Button id="3" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="156.0" prefWidth="148.0" GridPane.rowIndex="1" />
-                <Button id="4" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="156.0" prefWidth="148.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                <Button id="5" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="156.0" prefWidth="148.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                <Button id="6" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="156.0" prefWidth="148.0" GridPane.rowIndex="2" />
-                <Button id="7" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="156.0" prefWidth="148.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                <Button id="8" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="156.0" prefWidth="148.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                <Button id="0" layoutX="142.0" layoutY="10.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="156.0" prefWidth="148.0" />
+                <Button id="1" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="156.0" prefWidth="148.0" style="-fx-background-color: White;" GridPane.columnIndex="1" />
+                <Button id="2" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="156.0" prefWidth="148.0" style="-fx-background-color: White;" GridPane.columnIndex="2" />
+                <Button id="3" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="156.0" prefWidth="148.0" style="-fx-background-color: White;" GridPane.rowIndex="1" />
+                <Button id="4" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="156.0" prefWidth="148.0" style="-fx-background-color: White;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Button id="5" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="156.0" prefWidth="148.0" style="-fx-background-color: White;" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                <Button id="6" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="156.0" prefWidth="148.0" style="-fx-background-color: White;" GridPane.rowIndex="2" />
+                <Button id="7" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="156.0" prefWidth="148.0" style="-fx-background-color: White;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <Button id="8" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="156.0" prefWidth="148.0" style="-fx-background-color: White;" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                <Button id="0" layoutX="142.0" layoutY="10.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="156.0" prefWidth="148.0" style="-fx-background-color: White;" />
             </children>
         </GridPane>
         <Label fx:id="theme" layoutX="441.0" layoutY="105.0" prefHeight="18.0" prefWidth="173.0" text="Theme" textAlignment="CENTER">
