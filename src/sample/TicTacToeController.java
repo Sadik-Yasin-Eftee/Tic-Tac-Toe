@@ -26,60 +26,17 @@ import java.util.Random;
 import java.util.ResourceBundle;
 
 
-public class TicTacToeController {
-
-    private boolean player = true;
-
-    private boolean buttonArray[] = new boolean[9];
-
-    public void setButtonArray(boolean[] buttonArray) {
-        for (int i = 0; i < 9; i++) {
-            this.buttonArray[i] = false;
-        }
-    }
-
-    public int buttonCount = 0;
-    public int max = 8, min = 0;
+public class TicTacToeController<classicImage, forestImage, getClass> {
 
     public void buttonClicked(ActionEvent actionEvent) throws IOException {
 
+        Button AIButton = (Button) actionEvent.getTarget();
         Button clickedButton = (Button) actionEvent.getTarget();
-        String buttonLabel = clickedButton.getText();
+        String buttonLabel = AIButton.getText();
         WinningCombination winningCombination = new WinningCombination();
 
-        if (buttonCount < 9) {
-            clickedButton.setFont(new Font("MV Boli",30));
-            clickedButton.setText("X");
-            System.out.println(clickedButton.getId());
-            this.buttonArray[Integer.parseInt(clickedButton.getId())] = true;
-            System.out.println(this.buttonArray[Integer.parseInt(clickedButton.getId())]);
-            player = false;
-            buttonCount++;
-
-            if (winningCombination.combination() == 1){
-                System.out.println("Player wins");
-            }
-        }
-
-        if (buttonCount < 9) {
-            do {
-                //Random randomNumber = new Random();
-                int randomNumber = (int) (Math.random() * (max - min + 1) + min);
-                clickedButton = Main.buttons[randomNumber];
-                System.out.println(randomNumber);
-                //if ()
-                //System.out.println(clickedButton.getId());
-                player = true;
-            }
-            while (clickedButton.getText() != "");
-            clickedButton.setFont(new Font("MV Boli",30));
-            clickedButton.setText("O");
-            buttonCount++;
-            if (winningCombination.combination() == -1){
-                System.out.println("Computer wins");
-            }
-        }
-        //System.out.println("Button 1");
+        RandomAI randomAI = new RandomAI();
+        randomAI.randomAIMethod(clickedButton);
     }
 
     // This part is for theme selection
@@ -90,16 +47,17 @@ public class TicTacToeController {
     @FXML
     ImageView backgroundImage;
     Image classicImage;
-    Image forestImage ;
+    Image forestImage;
     Image highContrastImage;
 
 
     @FXML
-    public void initialize(){
+    public void initialize() {
         classicImage = new Image(getClass().getResourceAsStream("Classic.jpg"));
         forestImage = new Image(getClass().getResourceAsStream("Forest.png"));
         highContrastImage = new Image(getClass().getResourceAsStream("DarkGrey.jpg"));
     }
+
 
     public void themeSelection(ActionEvent actionEvent) throws IOException {
         if (classic.isSelected()) {
@@ -116,7 +74,4 @@ public class TicTacToeController {
             //theme.setText(highContrast.getText());
         }
     }
-
 }
-
-
