@@ -110,7 +110,7 @@ public class WinningCombination {
             }
         }
 
-        if (Main.buttons[2].getText() != "" && Main.buttons[2].getText() == "O") {
+        if (Main.buttons[2].getText() != "" && Main.buttons[2].getText() == "X") {
             if (Main.buttons[2].getText() == Main.buttons[4].getText() && Main.buttons[4].getText() == Main.buttons[6].getText()) {
                 highlightingWinningCombination.highlightWinningCombo(Main.buttons[2] , Main.buttons[4] , Main.buttons[6]);
                 return 1;

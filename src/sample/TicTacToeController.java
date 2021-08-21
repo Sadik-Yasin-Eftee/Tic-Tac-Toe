@@ -1,6 +1,7 @@
 package sample;
 
 
+import com.sun.scenario.effect.impl.HeapImage;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -28,14 +29,20 @@ import java.util.ResourceBundle;
 
 public class TicTacToeController<classicImage, forestImage, getClass> {
 
+    public int buttonCount = 0;
+
     public void buttonClicked(ActionEvent actionEvent) throws IOException {
 
         Button AIButton = (Button) actionEvent.getTarget();
         Button clickedButton = (Button) actionEvent.getTarget();
-        String buttonLabel = AIButton.getText();
+        //String buttonLabel = AIButton.getText();
 
         RandomAI randomAI = new RandomAI();
-        randomAI.randomAIMethod(clickedButton);
+        randomAI.randomAIMethod(AIButton , clickedButton);
+    }
+
+    public void defensiveAIButtonClicked(ActionEvent actionEvent) throws IOException{
+
     }
 
     // This part is for theme selection
@@ -60,24 +67,22 @@ public class TicTacToeController<classicImage, forestImage, getClass> {
     public void themeSelection(ActionEvent actionEvent) throws IOException {
         if (classic.isSelected()) {
             System.out.println("Classic Selected");
-            backgroundImage.setImage(classicImage);
-            for (int i = 0 ; i < 9 ; i++){
-                Main.buttons[i].setStyle("-fx-background-color: White");
-            }
+            ClassicTheme classicTheme = new ClassicTheme();
+            classicTheme.selectTheme(backgroundImage , classicImage);
+
             //theme.setText(classic.getText());
-        } else if (forest.isSelected()) {
+        }
+        else if (forest.isSelected()) {
             System.out.println("Forest Selected");
-            backgroundImage.setImage(forestImage);
-            for (int i = 0 ; i < 9 ; i++){
-                Main.buttons[i].setStyle("-fx-background-color: Green");
-            }
+            ForestTheme forestTheme = new ForestTheme();
+            forestTheme.selectTheme(backgroundImage , forestImage);
             //theme.setText(forest.getText());
-        } else if (highContrast.isSelected()) {
+        }
+        else if (highContrast.isSelected()) {
             System.out.println("High Selected");
             backgroundImage.setImage(highContrastImage);
-            for (int i = 0 ; i < 9 ; i++){
-                Main.buttons[i].setStyle("-fx-background-color: Grey");
-            }
+            HighContrastTheme highContrastTheme = new HighContrastTheme();
+            highContrastTheme.selectTheme(backgroundImage , highContrastImage);
             //theme.setText(highContrast.getText());
         }
     }

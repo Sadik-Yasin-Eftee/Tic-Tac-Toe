@@ -1,6 +1,7 @@
 package sample;
 
 import javafx.scene.text.Font;
+import javafx.scene.control.Button;
 
 import java.awt.*;
 
@@ -18,8 +19,9 @@ public class RandomAI {
     public int buttonCount = 0;
     public int max = 8, min = 0;
 
-    public void randomAIMethod(javafx.scene.control.Button clickedButton) {
+    public void randomAIMethod(Button randomAIButton, Button clickedButton) {
             WinningCombination winningCombination = new WinningCombination();
+
 
             if (buttonCount < 9) {
                 clickedButton.setFont(new javafx.scene.text.Font("MV Boli",30));
@@ -29,6 +31,7 @@ public class RandomAI {
                 System.out.println(this.buttonArray[Integer.parseInt(clickedButton.getId())]);
                 player = false;
                 buttonCount++;
+                System.out.println("button count" + buttonCount);
 
                 if (winningCombination.combination() == 1){
                     System.out.println("Player wins");
@@ -41,12 +44,14 @@ public class RandomAI {
                     clickedButton = Main.buttons[randomNumber];
                     System.out.println(randomNumber);
                     //System.out.println(clickedButton.getId());
+                    System.out.println(this.buttonArray[Integer.parseInt(clickedButton.getId())]);
                     player = true;
                 }
                 while (clickedButton.getText() != "");
                 clickedButton.setFont(new Font("MV Boli",30));
                 clickedButton.setText("O");
                 buttonCount++;
+                System.out.println("button count" + buttonCount);
                 if (winningCombination.combination() == -1){
                     System.out.println("Computer wins");
                 }
