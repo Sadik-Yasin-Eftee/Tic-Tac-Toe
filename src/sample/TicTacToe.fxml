@@ -47,8 +47,8 @@
                 <Font size="24.0" />
             </font>
         </Label>
-        <Button layoutX="436.0" layoutY="509.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="164.0" text="Start With Defensive AI" />
-      <Button layoutX="433.0" layoutY="471.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="26.0" prefWidth="164.0" text="Start With Random AI" />
+        <Button fx:id="defensive" layoutX="436.0" layoutY="509.0" mnemonicParsing="false" onAction="#modeButtonClicked" prefHeight="26.0" prefWidth="164.0" text="Start With Defensive AI" />
+      <Button fx:id="random" layoutX="433.0" layoutY="471.0" mnemonicParsing="false" onAction="#modeButtonClicked" prefHeight="26.0" prefWidth="164.0" text="Start With Random AI" />
       <RadioButton fx:id="classic" layoutX="441.0" layoutY="151.0" mnemonicParsing="false" onAction="#themeSelection" selected="true" text="Classic">
          <toggleGroup>
             <ToggleGroup fx:id="food" />
