@@ -9,8 +9,8 @@ import javafx.scene.image.ImageView;
 import java.io.IOException;
 
 public class TicTacToeController<classicImage, forestImage, getClass> {
-    AI ai = new RandomAI();
 
+    AI ai = new RandomAI();
 
     public void modeButtonClicked(ActionEvent actionEvent) throws IOException{
         Button AIButton = (Button) actionEvent.getTarget();
