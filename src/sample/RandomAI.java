@@ -18,7 +18,6 @@ public class RandomAI extends AI{
     }
 
     public int buttonCount = 0;
-    public int max = 8, min = 0;
 
     public RandomAI() {
         for (Button button : Main.buttons){
@@ -34,7 +33,7 @@ public class RandomAI extends AI{
         WinningCombination winningCombination = new WinningCombination();
 
         if (buttonCount < 9) {
-            clickedButton.setFont(new javafx.scene.text.Font("MV Boli",30));
+            clickedButton.setFont(new Font("MV Boli",30));
             clickedButton.setText("X");
             System.out.println(clickedButton.getId());
             this.buttonArray[Integer.parseInt(clickedButton.getId())] = true;
@@ -48,7 +47,8 @@ public class RandomAI extends AI{
 
         if (buttonCount < 9) {
             do {
-                int randomNumber = (int) (Math.random() * (max - min + 1) + min);
+                RandomNumberGenerator randomNumberGenerator = new RandomNumberGenerator();
+                int randomNumber = randomNumberGenerator.generateRandomNumber();
                 clickedButton = Main.buttons[randomNumber];
                 System.out.println(randomNumber);
                 //System.out.println(clickedButton.getId());

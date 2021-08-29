@@ -13,8 +13,6 @@ public class DefensiveAI extends AI {
     }
 
     public int buttonCount = 0;
-    public int max = 8, min = 0;
-
     private boolean player = true;
 
     @Override
@@ -23,7 +21,7 @@ public class DefensiveAI extends AI {
         WinningCombination winningCombination = new WinningCombination();
 
         if (buttonCount < 9) {
-            clickedButton.setFont(new javafx.scene.text.Font("MV Boli",30));
+            clickedButton.setFont(new Font("MV Boli",30));
             clickedButton.setText("X");
             System.out.println(clickedButton.getId());
             //this.buttonArray[Integer.parseInt(clickedButton.getId())] = true;
@@ -41,9 +39,11 @@ public class DefensiveAI extends AI {
             }
             else {
                 do {
-                    int randomNumber = (int) (Math.random() * (max - min + 1) + min);
+                    RandomNumberGenerator randomNumberGenerator = new RandomNumberGenerator();
+                    int randomNumber = randomNumberGenerator.generateRandomNumber();
+                    System.out.println("Random number is :" + randomNumber);
                     clickedButton = Main.buttons[randomNumber];
-                    player = true;
+
                 }
                 while (clickedButton.getText() != "");
                 clickedButton.setFont(new Font("MV Boli",30));
@@ -51,6 +51,7 @@ public class DefensiveAI extends AI {
                 buttonCount++;
                 System.out.println("button count" + buttonCount);
             }
+            player = true;
             if (winningCombination.combination() == -1){
                 System.out.println("Computer wins");
             }
@@ -60,15 +61,18 @@ public class DefensiveAI extends AI {
     public int blockMoves(){
         //row check
         for (int i = 0 ; i < 9 ; i = i + 3){
-            if (Main.buttons[i].getText().equals(Main.buttons[i+1].getText())){
+            if (Main.buttons[i].getText() == "X" && Main.buttons[i+1].getText() == "X"){
+                Main.buttons[i+2].setFont(new Font("MV Boli",30));
                 Main.buttons[i+2].setText("O");
                 return 1;
             }
-            else if (Main.buttons[i].getText().equals(Main.buttons[i+2].getText())){
+            else if (Main.buttons[i].getText() == "X" && Main.buttons[i+2].getText() == "X"){
+                Main.buttons[i+1].setFont(new Font("MV Boli",30));
                 Main.buttons[i+1].setText("O");
                 return 1;
             }
-            else if (Main.buttons[i+1].getText().equals(Main.buttons[i+2].getText())){
+            else if (Main.buttons[i+1].getText() == "X" && Main.buttons[i+2].getText() == "X"){
+                Main.buttons[i].setFont(new Font("MV Boli",30));
                 Main.buttons[i].setText("O");
                 return 1;
             }
@@ -76,21 +80,25 @@ public class DefensiveAI extends AI {
 
         //column check
         for (int i = 0 ; i < 3 ; i++){
-            if (Main.buttons[i].getText().equals(Main.buttons[i+3].getText())){
+            if (Main.buttons[i].getText() == "X" && Main.buttons[i+3].getText() == "X"){
+                Main.buttons[i+6].setFont(new Font("MV Boli",30));
                 Main.buttons[i+6].setText("O");
                 return 1;
             }
-            else if (Main.buttons[i].getText().equals(Main.buttons[i+6].getText())){
+            else if (Main.buttons[i].getText() == "X" && Main.buttons[i+6].getText() == "X"){
+                Main.buttons[i+3].setFont(new Font("MV Boli",30));
                 Main.buttons[i+3].setText("O");
                 return 1;
             }
-            else if (Main.buttons[i+3].getText().equals(Main.buttons[i+6].getText())){
+            else if (Main.buttons[i+3].getText() == "X" && Main.buttons[i+6].getText() == "X"){
+                Main.buttons[i].setFont(new Font("MV Boli",30));
                 Main.buttons[i].setText("O");
                 return 1;
             }
         }
 
         //diagonal check
+        
         return 0;
     }
 }
