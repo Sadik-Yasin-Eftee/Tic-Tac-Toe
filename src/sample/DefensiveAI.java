@@ -19,10 +19,8 @@ public class DefensiveAI extends AI {
         MoveBlocker moveBlocker = new MoveBlocker();
 
         if (buttonCount < 9) {
-            System.out.println("Player Mode");
-            clickedButton.setFont(new Font("MV Boli",30));
-            clickedButton.setText("X");
-            System.out.println(clickedButton.getId());
+            PlayerMove playerMove = new PlayerMove();
+            playerMove.play(clickedButton);
             //this.buttonArray[Integer.parseInt(clickedButton.getId())] = true;
             //System.out.println(this.buttonArray[Integer.parseInt(clickedButton.getId())]);
             player = false;

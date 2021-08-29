@@ -9,35 +9,27 @@ import java.awt.event.ActionEvent;
 public class RandomAI extends AI{
     private boolean player = true;
 
-    private boolean buttonArray[] = new boolean[9];
+//    private boolean buttonArray[] = new boolean[9];
 
-    public void setButtonArray(boolean[] buttonArray) {
-        for (int i = 0; i < 9; i++) {
-            this.buttonArray[i] = false;
-        }
-    }
+//    public void setButtonArray(boolean[] buttonArray) {
+//        for (int i = 0; i < 9; i++) {
+//            this.buttonArray[i] = false;
+//        }
+//    }
 
     public int buttonCount = 0;
 
     public RandomAI() {
-        for (Button button : Main.buttons){
-            if (button != null){
-                button.setText("");
-            }
-        }
+        ResetTheBoard resetTheBoard = new ResetTheBoard();
+        resetTheBoard.reset();
     }
-
-
 
     public void generateMove(Button clickedButton) {
         WinningCombination winningCombination = new WinningCombination();
 
         if (buttonCount < 9) {
-            clickedButton.setFont(new Font("MV Boli",30));
-            clickedButton.setText("X");
-            System.out.println(clickedButton.getId());
-            this.buttonArray[Integer.parseInt(clickedButton.getId())] = true;
-            System.out.println(this.buttonArray[Integer.parseInt(clickedButton.getId())]);
+            PlayerMove playerMove = new PlayerMove();
+            playerMove.play(clickedButton);
             player = false;
             buttonCount++;
             if (winningCombination.combination() == 1){
@@ -52,7 +44,7 @@ public class RandomAI extends AI{
                 clickedButton = Main.buttons[randomNumber];
                 System.out.println(randomNumber);
                 //System.out.println(clickedButton.getId());
-                System.out.println(this.buttonArray[Integer.parseInt(clickedButton.getId())]);
+                //System.out.println(this.buttonArray[Integer.parseInt(clickedButton.getId())]);
                 player = true;
             }
             while (clickedButton.getText() != "");
@@ -65,7 +57,6 @@ public class RandomAI extends AI{
             }
         }
         //System.out.println("Button 1");
-
     }
 
 }
