@@ -21,6 +21,7 @@ public class DefensiveAI extends AI {
         WinningCombination winningCombination = new WinningCombination();
 
         if (buttonCount < 9) {
+            System.out.println("Player Mode");
             clickedButton.setFont(new Font("MV Boli",30));
             clickedButton.setText("X");
             System.out.println(clickedButton.getId());
@@ -34,10 +35,13 @@ public class DefensiveAI extends AI {
         }
 
         if (buttonCount < 9){
+            System.out.println("AI mode");
             if (blockMoves() == 1){
-              buttonCount++;
+                System.out.println("Block move mode");
+                buttonCount++;
             }
-            else {
+            else if (blockMoves() == 0) {
+                System.out.println("Random number generator mode");
                 do {
                     RandomNumberGenerator randomNumberGenerator = new RandomNumberGenerator();
                     int randomNumber = randomNumberGenerator.generateRandomNumber();
@@ -98,7 +102,38 @@ public class DefensiveAI extends AI {
         }
 
         //diagonal check
-        
+        if (Main.buttons[0].getText() == "X" && Main.buttons[4].getText() == "X"){
+            Main.buttons[7].setFont(new Font("MV Boli",30));
+            Main.buttons[7].setText("O");
+            return 1;
+        }
+        else if (Main.buttons[0].getText() == "X" && Main.buttons[7].getText() == "X"){
+            Main.buttons[4].setFont(new Font("MV Boli",30));
+            Main.buttons[4].setText("O");
+            return 1;
+        }
+        else if (Main.buttons[4].getText() == "X" && Main.buttons[4].getText() == "X"){
+            Main.buttons[0].setFont(new Font("MV Boli",30));
+            Main.buttons[0].setText("O");
+            return 1;
+        }
+
+        if (Main.buttons[2].getText() == "X" && Main.buttons[4].getText() == "X"){
+            Main.buttons[6].setFont(new Font("MV Boli",30));
+            Main.buttons[6].setText("O");
+            return 1;
+        }
+        else if (Main.buttons[2].getText() == "X" && Main.buttons[6].getText() == "X"){
+            Main.buttons[4].setFont(new Font("MV Boli",30));
+            Main.buttons[4].setText("O");
+            return 1;
+        }
+        else if (Main.buttons[4].getText() == "X" && Main.buttons[6].getText() == "X"){
+            Main.buttons[2].setFont(new Font("MV Boli",30));
+            Main.buttons[2].setText("O");
+            return 1;
+        }
+
         return 0;
     }
 }
