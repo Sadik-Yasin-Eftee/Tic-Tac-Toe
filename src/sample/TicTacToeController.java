@@ -17,8 +17,7 @@ public class TicTacToeController<classicImage, forestImage, getClass> {
         String modeButtonLabel = AIButton.getId();
         if (modeButtonLabel.equals("random")){
             ai = new RandomAI();
-        }
-        else {
+        } else {
             ai = new DefensiveAI();
         }
     }

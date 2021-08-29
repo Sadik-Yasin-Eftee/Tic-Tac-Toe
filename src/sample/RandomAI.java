@@ -58,5 +58,4 @@ public class RandomAI extends AI{
         }
         //System.out.println("Button 1");
     }
-
 }

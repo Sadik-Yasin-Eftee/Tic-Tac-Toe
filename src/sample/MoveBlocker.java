@@ -55,26 +55,31 @@ public class MoveBlocker {
         }
 
         //diagonal check
-        if ((Main.buttons[0].getText() == "X") && (Main.buttons[4].getText() == "X")) {
-            if (Main.buttons[7].getText() == ""){
-                Main.buttons[7].setFont(new Font("MV Boli", 30));
-                Main.buttons[7].setText("O");
-                return 1;
-            }
+        while (true){
+            if ((Main.buttons[0].getText() == "X") && (Main.buttons[4].getText() == "X")) {
+                if (Main.buttons[8].getText() == ""){
+                    Main.buttons[8].setFont(new Font("MV Boli", 30));
+                    Main.buttons[8].setText("O");
+                    return 1;
+                }
 
-        } else if ((Main.buttons[0].getText() == "X") && (Main.buttons[7].getText() == "X")) {
-            if (Main.buttons[4].getText() == ""){
-                Main.buttons[4].setFont(new Font("MV Boli", 30));
-                Main.buttons[4].setText("O");
-                return 1;
-            }
-        } else if ((Main.buttons[4].getText() == "X") && (Main.buttons[4].getText() == "X")) {
-            if (Main.buttons[0].getText() == ""){
-                Main.buttons[0].setFont(new Font("MV Boli", 30));
-                Main.buttons[0].setText("O");
-                return 1;
+            } else if ((Main.buttons[0].getText() == "X") && (Main.buttons[8].getText() == "X")) {
+                if (Main.buttons[4].getText() == ""){
+                    Main.buttons[4].setFont(new Font("MV Boli", 30));
+                    Main.buttons[4].setText("O");
+                    return 1;
+                }
+            } else if ((Main.buttons[4].getText() == "X") && (Main.buttons[8].getText() == "X")) {
+                if (Main.buttons[0].getText() == ""){
+                    Main.buttons[0].setFont(new Font("MV Boli", 30));
+                    Main.buttons[0].setText("O");
+                    return 1;
+                }
+            }else {
+                break;
             }
         }
+
 
         if ((Main.buttons[2].getText() == "X") && (Main.buttons[4].getText() == "X")) {
             if (Main.buttons[6].getText() == ""){
@@ -95,7 +100,6 @@ public class MoveBlocker {
                 return 1;
             }
         }
-
         return 0;
     }
 }
