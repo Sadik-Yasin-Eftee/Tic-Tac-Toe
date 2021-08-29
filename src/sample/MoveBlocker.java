@@ -5,24 +5,34 @@ import javafx.scene.text.Font;
 public class MoveBlocker {
     public int blockMoves(){
         //row check
-        for (int i = 0 ; i < 9 ; i = i + 3){
-            if (Main.buttons[i].getText() == "X" && Main.buttons[i+1].getText() == "X"){
-                Main.buttons[i+2].setFont(new Font("MV Boli",30));
-                Main.buttons[i+2].setText("O");
-                return 1;
-            }
-            else if (Main.buttons[i].getText() == "X" && Main.buttons[i+2].getText() == "X"){
-                Main.buttons[i+1].setFont(new Font("MV Boli",30));
-                Main.buttons[i+1].setText("O");
-                return 1;
-            }
-            else if (Main.buttons[i+1].getText() == "X" && Main.buttons[i+2].getText() == "X"){
-                Main.buttons[i].setFont(new Font("MV Boli",30));
-                Main.buttons[i].setText("O");
-                return 1;
+        for (int i = 0 ; i < 9 ; i = i + 3) {
+            if (Main.buttons[i].getText() == "X" && Main.buttons[i + 1].getText() == "X") {
+                if (Main.buttons[i + 2].equals("")) {
+                    Main.buttons[i + 2].setFont(new Font("MV Boli", 30));
+                    Main.buttons[i + 2].setText("O");
+                    return 1;
+                } else {
+                    return 0;
+                }
+            } else if (Main.buttons[i].getText() == "X" && Main.buttons[i + 2].getText() == "X") {
+                if (Main.buttons[i + 1].equals("")) {
+                    Main.buttons[i + 1].setFont(new Font("MV Boli", 30));
+                    Main.buttons[i + 1].setText("O");
+                    return 1;
+                } else {
+                    return 0;
+                }
+            } else if (Main.buttons[i + 1].getText() == "X" && Main.buttons[i + 2].getText() == "X") {
+                if (Main.buttons[i].equals("")) {
+                    Main.buttons[i].setFont(new Font("MV Boli", 30));
+                    Main.buttons[i].setText("O");
+                    return 1;
+                } else {
+                    return 0;
+                }
             }
         }
-
+        
         //column check
         for (int i = 0 ; i < 3 ; i++){
             if (Main.buttons[i].getText() == "X" && Main.buttons[i+3].getText() == "X"){
