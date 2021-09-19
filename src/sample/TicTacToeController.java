@@ -56,20 +56,20 @@ public class TicTacToeController<classicImage, forestImage, getClass> {
             System.out.println("Classic Selected");
             ClassicTheme classicTheme = new ClassicTheme();
             classicTheme.selectTheme(backgroundImage , classicImage);
-            classicTheme.setButtonAndBorderColor();
             TicTacToeController.classicTheme = true;
             TicTacToeController.forestTheme = false;
             TicTacToeController.highContrastTheme = false;
+            classicTheme.setButtonAndBorderColor();
             //theme.setText(classic.getText());
         }
         else if (forest.isSelected()) {
             System.out.println("Forest Selected");
             ForestTheme forestTheme = new ForestTheme();
             forestTheme.selectTheme(backgroundImage , forestImage);
-            forestTheme.setButtonAndBorderColor();
             TicTacToeController.classicTheme = false;
             TicTacToeController.forestTheme = true;
             TicTacToeController.highContrastTheme = false;
+            forestTheme.setButtonAndBorderColor();
             //theme.setText(forest.getText());
         }
         else if (highContrast.isSelected()) {
@@ -80,6 +80,7 @@ public class TicTacToeController<classicImage, forestImage, getClass> {
             TicTacToeController.classicTheme = false;
             TicTacToeController.forestTheme = true;
             TicTacToeController.highContrastTheme = false;
+            highContrastTheme.setButtonAndBorderColor();
             //theme.setText(highContrast.getText());
         }
     }
