@@ -52,6 +52,8 @@ public class TicTacToeController<classicImage, forestImage, getClass> {
             System.out.println("Classic Selected");
             ClassicTheme classicTheme = new ClassicTheme();
             classicTheme.selectTheme(backgroundImage , classicImage);
+            ResetTheBoard resetTheBoard = new ResetTheBoard();
+            resetTheBoard.resetWinningHighlights();
             //theme.setText(classic.getText());
         }
         else if (forest.isSelected()) {

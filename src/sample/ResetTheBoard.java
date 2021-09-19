@@ -10,4 +10,7 @@ public class ResetTheBoard {
             }
         }
     }
+    public void resetWinningHighlights(){
+
+    }
 }
