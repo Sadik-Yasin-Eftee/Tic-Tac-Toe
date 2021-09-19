@@ -43,7 +43,7 @@ public class DefensiveAI extends AI {
                     RandomNumberGenerator randomNumberGenerator = new RandomNumberGenerator();
                     int randomNumber = randomNumberGenerator.generateRandomNumber();
                     System.out.println("Random number is :" + randomNumber);
-                    clickedButton = Main.buttons[randomNumber];
+                    clickedButton = Main.uiButtons[randomNumber];
 
                 }
                 while (clickedButton.getText() != "");

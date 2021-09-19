@@ -1,20 +1,16 @@
 package sample;
 
 import javafx.application.Application;
-import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
 import javafx.fxml.FXMLLoader;
-import java.awt.*;
-import java.lang.reflect.Array;
 
 public class Main extends Application {
 
-    static Button[] buttons = new Button[9];
+    static Button[] uiButtons = new Button[9];
+    static Button[] gameButtons = new Button[9];
 
     @Override
     public void start(Stage primaryStage) {
@@ -36,11 +32,12 @@ public class Main extends Application {
                 button = ((Button) scene.lookup("#" + j));
                 String index = button.getId();
                 //int ind = Integer.parseInt(index);
-                buttons[i] = button;
+                uiButtons[i] = button;
                 //buttons[i].setFont(new Font("MV Boli", 10));
-                System.out.println(buttons[i]);
+                System.out.println(uiButtons[i]);
                 //button.setText("O");
             }
+            TicTacToeController.ai = new RandomAI();
 
 
             //scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());

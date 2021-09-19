@@ -3,9 +3,6 @@ package sample;
 import javafx.scene.text.Font;
 import javafx.scene.control.Button;
 
-import java.awt.*;
-import java.awt.event.ActionEvent;
-
 public class RandomAI extends AI{
     private boolean player = true;
 
@@ -28,7 +25,7 @@ public class RandomAI extends AI{
     public void generateMove(Button clickedButton) {
         WinningCombination winningCombination = new WinningCombination();
 
-        if (buttonCount < 9) {
+        if (isGameFinished(winningCombination)) {
             PlayerMove playerMove = new PlayerMove();
             playerMove.play(clickedButton);
             player = false;
@@ -38,11 +35,11 @@ public class RandomAI extends AI{
             }
         }
 
-        if (buttonCount < 9) {
+        if (isGameFinished(winningCombination)) {
             do {
                 RandomNumberGenerator randomNumberGenerator = new RandomNumberGenerator();
                 int randomNumber = randomNumberGenerator.generateRandomNumber();
-                clickedButton = Main.buttons[randomNumber];
+                clickedButton = Main.uiButtons[randomNumber];
                 System.out.println(randomNumber);
                 //System.out.println(clickedButton.getId());
                 //System.out.println(this.buttonArray[Integer.parseInt(clickedButton.getId())]);
@@ -51,6 +48,7 @@ public class RandomAI extends AI{
             while (clickedButton.getText() != "");
             clickedButton.setFont(new Font("MV Boli",30));
             clickedButton.setText("O");
+
             buttonCount++;
             System.out.println("button count" + buttonCount);
             if (winningCombination.combination() == -1){
@@ -58,5 +56,9 @@ public class RandomAI extends AI{
             }
         }
         //System.out.println("Button 1");
+    }
+
+    private boolean isGameFinished(WinningCombination winningCombination) {
+        return buttonCount < 9 && winningCombination.combination() != 1 && winningCombination.combination() != -1;
     }
 }

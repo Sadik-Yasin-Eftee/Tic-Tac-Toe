@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class TicTacToeController<classicImage, forestImage, getClass> {
 
-    AI ai = new RandomAI();
+    static AI ai;
 
     public void modeButtonClicked(ActionEvent actionEvent) throws IOException{
         Button AIButton = (Button) actionEvent.getTarget();
@@ -35,9 +35,9 @@ public class TicTacToeController<classicImage, forestImage, getClass> {
 
     @FXML
     ImageView backgroundImage;
-    Image classicImage;
-    Image forestImage;
-    Image highContrastImage;
+    static Image classicImage;
+    static Image forestImage;
+    static Image highContrastImage;
 
 
     @FXML

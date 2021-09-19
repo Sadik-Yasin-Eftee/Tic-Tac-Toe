@@ -4,7 +4,7 @@ import javafx.scene.control.Button;
 
 public class ResetTheBoard {
     public void resetButtons(){
-        for (Button button : Main.buttons){
+        for (Button button : Main.uiButtons){
             if (button != null){
                 button.setText("");
             }
