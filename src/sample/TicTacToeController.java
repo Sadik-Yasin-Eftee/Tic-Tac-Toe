@@ -56,6 +56,7 @@ public class TicTacToeController<classicImage, forestImage, getClass> {
             System.out.println("Classic Selected");
             ClassicTheme classicTheme = new ClassicTheme();
             classicTheme.selectTheme(backgroundImage , classicImage);
+            classicTheme.setButtonAndBorderColor();
             TicTacToeController.classicTheme = true;
             TicTacToeController.forestTheme = false;
             TicTacToeController.highContrastTheme = false;

@@ -11,9 +11,18 @@ public class ResetTheBoard {
         }
     }
     public void resetWinningHighlights(){
-        if (TicTacToeController.forestTheme){
+        if (TicTacToeController.classicTheme){
+            ClassicTheme classicTheme = new ClassicTheme();
+            classicTheme.setButtonAndBorderColor();
+
+        }
+        else if (TicTacToeController.forestTheme){
             ForestTheme forestTheme = new ForestTheme();
             forestTheme.setButtonAndBorderColor();
+        }
+        else if (TicTacToeController.highContrastTheme){
+            HighContrastTheme highContrastTheme = new HighContrastTheme();
+            highContrastTheme.setButtonAndBorderColor();
         }
     }
 }
