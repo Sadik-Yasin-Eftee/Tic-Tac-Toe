@@ -47,19 +47,28 @@ public class TicTacToeController<classicImage, forestImage, getClass> {
         highContrastImage = new Image(getClass().getResourceAsStream("DarkGrey.jpg"));
     }
 
+    static boolean classicTheme = true;
+    static boolean forestTheme = false;
+    static boolean highContrastTheme = false;
+
     public void themeSelection(ActionEvent actionEvent) throws IOException {
         if (classic.isSelected()) {
             System.out.println("Classic Selected");
             ClassicTheme classicTheme = new ClassicTheme();
             classicTheme.selectTheme(backgroundImage , classicImage);
-            ResetTheBoard resetTheBoard = new ResetTheBoard();
-            resetTheBoard.resetWinningHighlights();
+            TicTacToeController.classicTheme = true;
+            TicTacToeController.forestTheme = false;
+            TicTacToeController.highContrastTheme = false;
             //theme.setText(classic.getText());
         }
         else if (forest.isSelected()) {
             System.out.println("Forest Selected");
             ForestTheme forestTheme = new ForestTheme();
             forestTheme.selectTheme(backgroundImage , forestImage);
+            forestTheme.setButtonAndBorderColor();
+            TicTacToeController.classicTheme = false;
+            TicTacToeController.forestTheme = true;
+            TicTacToeController.highContrastTheme = false;
             //theme.setText(forest.getText());
         }
         else if (highContrast.isSelected()) {
@@ -67,6 +76,9 @@ public class TicTacToeController<classicImage, forestImage, getClass> {
             backgroundImage.setImage(highContrastImage);
             HighContrastTheme highContrastTheme = new HighContrastTheme();
             highContrastTheme.selectTheme(backgroundImage , highContrastImage);
+            TicTacToeController.classicTheme = false;
+            TicTacToeController.forestTheme = true;
+            TicTacToeController.highContrastTheme = false;
             //theme.setText(highContrast.getText());
         }
     }

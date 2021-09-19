@@ -6,7 +6,8 @@ import javafx.scene.text.Font;
 public class DefensiveAI extends AI {
     public DefensiveAI() {
         ResetTheBoard resetTheBoard = new ResetTheBoard();
-        resetTheBoard.reset();
+        resetTheBoard.resetButtons();
+        resetTheBoard.resetWinningHighlights();
     }
 
     public int buttonCount = 0;

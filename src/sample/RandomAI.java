@@ -21,7 +21,8 @@ public class RandomAI extends AI{
 
     public RandomAI() {
         ResetTheBoard resetTheBoard = new ResetTheBoard();
-        resetTheBoard.reset();
+        resetTheBoard.resetButtons();
+        resetTheBoard.resetWinningHighlights();
     }
 
     public void generateMove(Button clickedButton) {
