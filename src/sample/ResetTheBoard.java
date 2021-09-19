@@ -4,9 +4,12 @@ import javafx.scene.control.Button;
 
 public class ResetTheBoard {
     public void resetButtons(){
-        for (Button button : Main.uiButtons){
-            if (button != null){
-                button.setText("");
+        for (int i = 0 ; i < 9 ; i++){
+            var gameButton = Main.gameButtons[i];
+            var uiButton = Main.uiButtons[i];
+            if (uiButton != null){
+                uiButton.setText("");
+                gameButton.setText("");
             }
         }
     }

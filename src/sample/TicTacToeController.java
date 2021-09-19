@@ -83,5 +83,6 @@ public class TicTacToeController<classicImage, forestImage, getClass> {
             highContrastTheme.setButtonAndBorderColor();
             //theme.setText(highContrast.getText());
         }
+        new WinningCombination().combination();
     }
 }

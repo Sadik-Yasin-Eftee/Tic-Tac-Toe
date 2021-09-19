@@ -12,8 +12,14 @@ public class ClassicTheme implements ThemeSelection{
 
     public void setButtonAndBorderColor(){
         for (int i = 0 ; i < 9 ; i++){
-            Main.uiButtons[i].setStyle("-fx-border-color: Black");
-            Main.uiButtons[i].setStyle("-fx-background-color: White");
+            var gameButton = Main.gameButtons[i];
+            var uiButton  = Main.uiButtons[i];
+
+            uiButton.setStyle("-fx-border-color: Black");
+            uiButton.setStyle("-fx-background-color: White");
+            if (gameButton.getText().equals("X")){
+                uiButton.setText("X");
+            }
         }
     }
 }

@@ -10,15 +10,14 @@ public class ForestTheme implements ThemeSelection {
     }
     public void setButtonAndBorderColor(){
         for (int i = 0 ; i < 9 ; i++){
-            var button = Main.uiButtons[i];
-            button.setStyle("-fx-border-color: Green");
-            button.setStyle("-fx-background-color: Green");
-            if (TicTacToeController.forestTheme){
-                if (button.getText().equals("X")){
-                    button.setText("\uD83C\uDF4E");
-                }
-            }
+            var gameButton = Main.gameButtons[i];
+            var uiButton  = Main.uiButtons[i];
 
+            uiButton.setStyle("-fx-border-color: Green");
+            uiButton.setStyle("-fx-background-color: Green");
+            if (gameButton.getText().equals("X")){
+                uiButton.setText("\uD83C\uDF4E");
+            }
         }
     }
 }

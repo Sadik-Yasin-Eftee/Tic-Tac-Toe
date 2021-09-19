@@ -9,9 +9,15 @@ public class HighContrastTheme implements ThemeSelection{
         backgroundImage.setImage(themeImage);
     }
     public void setButtonAndBorderColor(){
-        for (int i = 0 ; i < 9 ; i++) {
-            Main.uiButtons[i].setStyle("-fx-border-color: Grey");
-            Main.uiButtons[i].setStyle("-fx-background-color: Grey");
+        for (int i = 0 ; i < 9 ; i++){
+            var gameButton = Main.gameButtons[i];
+            var uiButton  = Main.uiButtons[i];
+
+            uiButton.setStyle("-fx-border-color: Grey");
+            uiButton.setStyle("-fx-background-color: Grey");
+            if (gameButton.getText().equals("X")){
+                uiButton.setText("X");
+            }
         }
     }
 }

@@ -15,6 +15,7 @@ public class RandomAI extends AI{
 //    }
 
     public int buttonCount = 0;
+    int randomNumber;
 
     public RandomAI() {
         ResetTheBoard resetTheBoard = new ResetTheBoard();
@@ -35,10 +36,11 @@ public class RandomAI extends AI{
             }
         }
 
+
         if (isGameFinished(winningCombination)) {
             do {
                 RandomNumberGenerator randomNumberGenerator = new RandomNumberGenerator();
-                int randomNumber = randomNumberGenerator.generateRandomNumber();
+                randomNumber = randomNumberGenerator.generateRandomNumber();
                 clickedButton = Main.uiButtons[randomNumber];
                 System.out.println(randomNumber);
                 //System.out.println(clickedButton.getId());
@@ -48,6 +50,7 @@ public class RandomAI extends AI{
             while (clickedButton.getText() != "");
             clickedButton.setFont(new Font("MV Boli",30));
             clickedButton.setText("O");
+            Main.gameButtons[randomNumber].setText("O");
 
             buttonCount++;
             System.out.println("button count" + buttonCount);

@@ -9,7 +9,8 @@ public class PlayerMove {
         System.out.println("Player Mode");
         clickedButton.setFont(new Font("MV Boli",30));
         clickedButton.setText("X");
-
+        var buttonId = Integer.parseInt(clickedButton.getId());
+        Main.gameButtons[buttonId].setText("X");
 
         if (TicTacToeController.forestTheme){
             clickedButton.setText("\uD83C\uDF4E");;

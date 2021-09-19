@@ -33,6 +33,7 @@ public class Main extends Application {
                 String index = button.getId();
                 //int ind = Integer.parseInt(index);
                 uiButtons[i] = button;
+                gameButtons[i] = new Button();
                 //buttons[i].setFont(new Font("MV Boli", 10));
                 System.out.println(uiButtons[i]);
                 //button.setText("O");
